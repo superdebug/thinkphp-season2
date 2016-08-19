@@ -1,0 +1,18 @@
+[ 2016-08-19T09:22:34+08:00 ] ::1 /thinkphp-season2/center.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:Center
+
+[ 2016-08-19T09:22:34+08:00 ] ::1 /thinkphp-season2/down.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+ERR: 无法加载模块:Down
+
+[ 2016-08-19T09:22:34+08:00 ] ::1 /thinkphp-season2/top.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:Top
+
