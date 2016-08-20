@@ -14,6 +14,8 @@ body {
 	font-size: 12px;
 	color: #435255;
 }
+
+a{color:#000; text-decoration:none} /* 去掉下划线*/
 .STYLE4 {font-size: 12px}
 .STYLE5 {font-size: 12px; font-weight: bold; }
 -->
@@ -51,7 +53,7 @@ body {
               <td width="33" height="28"><img src="<?php echo ADMIN_PUC;?>images/main_46.gif" width="28" height="28"></td>
               <td width="99"><table width="100%" border="0" cellspacing="0" cellpadding="0">
                   <tr>
-                    <td height="23" class="STYLE4" style="cursor:hand" onMouseOver="this.style.backgroundImage='url(<?php echo ADMIN_PUC;?>images/tab_bg.gif)';this.style.borderStyle='solid';this.style.borderWidth='1';borderColor='#adb9c2'; "onmouseout="this.style.backgroundImage='url()';this.style.borderStyle='none'">栏目管理</td>
+                    <td height="23" class="STYLE4" style="cursor:hand" onMouseOver="this.style.backgroundImage='url(<?php echo ADMIN_PUC;?>images/tab_bg.gif)';this.style.borderStyle='solid';this.style.borderWidth='1';borderColor='#adb9c2'; "onmouseout="this.style.backgroundImage='url()';this.style.borderStyle='none'"><a href="/thinkphp-season2/index.php/Admin/Category/lst" target="right">栏目管理</a></td>
                   </tr>
               </table></td>
             </tr>

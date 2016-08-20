@@ -2,16 +2,17 @@
 namespace Admin\Controller;
 use Think\Controller;
 class CategoryController extends Controller {
-    public function index(){
+    public function lst(){
         $this->display();
     }
-    public function left(){
+
+    public function add(){
+        $cate=D('category');
         $this->display();
     }
-    public function top(){
+
+    public function edit(){
         $this->display();
     }
-    public function center(){
-        $this->display();
-    }
+
 }
