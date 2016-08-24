@@ -135,7 +135,7 @@ for(i=0;i<cs.length;i++){
       </tr>
       <tr>
         <td height="20" bgcolor="#FFFFFF" class="STYLE6" align="right">栏目描述</td>
-        <td height="20" bgcolor="#FFFFFF" class="STYLE19" align="left"><input name="cate_desc" type="text"/></td>
+        <td height="20" bgcolor="#FFFFFF" class="STYLE19" align="left"><textarea name="cate_desc" cols="30" rows="5"></textarea></td>
       </tr>
       <tr>
         <td height="20" bgcolor="#FFFFFF" class="STYLE6" align="right">缩略图</td>
@@ -144,7 +144,7 @@ for(i=0;i<cs.length;i++){
       <tr>
         <td height="20" bgcolor="#FFFFFF" class="STYLE6" align="right">栏目类型</td>
         <td class="cd" height="20" bgcolor="#FFFFFF" class="STYLE19" align="left">
-          列表栏目<input type="radio" checked="checked" name="cate_type"/>封面栏目<input type="radio" name="cate_type" />产品栏目<input type="radio" name="cate_type"/>
+          列表栏目<input type="radio" checked="checked" name="cate_type" value="1" />封面栏目<input type="radio" name="cate_type" value="0" />产品栏目<input type="radio" name="cate_type" value="2"/>
         </td>
       </tr>
       <tr>
