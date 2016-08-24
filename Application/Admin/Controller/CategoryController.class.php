@@ -3,6 +3,9 @@ namespace Admin\Controller;
 use Think\Controller;
 class CategoryController extends Controller {
     public function lst(){
+        $cate=D('category');
+        $cate->select();
+        
         $this->display();
     }
 

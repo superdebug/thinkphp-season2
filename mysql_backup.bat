@@ -1,1 +1,1 @@
-mysqldump -uroot   article  >article.sql
+mysqldump -uroot   qywdb  >qywdb.sql
