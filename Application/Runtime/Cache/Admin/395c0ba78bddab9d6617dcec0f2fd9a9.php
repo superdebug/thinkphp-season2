@@ -125,10 +125,14 @@ for(i=0;i<cs.length;i++){
         </div></td>
         <td height="20" bgcolor="#FFFFFF" class="STYLE6"><div align="center"><span class="STYLE19"><?php echo ($vo["cate_id"]); ?></span></div></td>
         <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><?php echo ($vo["cate_name"]); ?></div></td>
-        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><img src="/thinkphp-season2<?php echo ($vo["cate_pic"]); ?>" height="50"></div></td>
-        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center">192.168.0.124</div></td>
-        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center">用户可以对系统的所有操作进行管理...</div></td>
-        <td height="20" bgcolor="#FFFFFF"><div align="center" class="STYLE21"><a href="/thinkphp-season2/index.php/Admin/Category/edit">修改</a> | 删除</div></td>
+        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center">
+        <?php if($vo[cate_pic] != ''): ?><img src="/thinkphp-season2<?php echo ($vo["cate_pic"]); ?>" height="50">
+        <?php else: ?>
+          暂无缩略图<?php endif; ?>
+        </div></td>
+        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><?php echo ($vo["parentid"]); ?></div></td>
+        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><?php echo ($vo["cate_type"]); ?></div></td>
+        <td height="20" bgcolor="#FFFFFF"><div align="center" class="STYLE21"><a href="/thinkphp-season2/index.php/Admin/Category/edit/<?php echo ($vo["cate_id"]); ?>">修改</a> |<a href="/thinkphp-season2/index.php/Admin/Category/del/<?php echo ($vo["cate_id"]); ?>"> 删除</a></div></td>
       </tr><?php endforeach; endif; else: echo "" ;endif; ?>
     </table></td>
   </tr>
