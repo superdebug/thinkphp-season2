@@ -4,8 +4,8 @@ use Think\Controller;
 class CategoryController extends Controller {
     public function lst(){
         $cate=D('category');
-        $cate->select();
-        
+        $cateres=$cate->select();
+        $this->assign('cateres',$cateres);
         $this->display();
     }
 

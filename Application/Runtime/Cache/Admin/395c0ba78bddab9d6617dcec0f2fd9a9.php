@@ -119,18 +119,17 @@ for(i=0;i<cs.length;i++){
         <td width="27%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">栏目类型</span></div></td>
         <td width="14%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">基本操作</span></div></td>
       </tr>
-      <tr>
+      <?php if(is_array($cateres)): $i = 0; $__LIST__ = $cateres;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
         <td height="20" bgcolor="#FFFFFF"><div align="center">
           <input type="checkbox" name="checkbox2" id="checkbox2" />
         </div></td>
-        <td height="20" bgcolor="#FFFFFF" class="STYLE6"><div align="center"><span class="STYLE19">admin</span></div></td>
-        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center">系统管理员</div></td>
-        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center">13913612548</div></td>
+        <td height="20" bgcolor="#FFFFFF" class="STYLE6"><div align="center"><span class="STYLE19"><?php echo ($vo["cate_id"]); ?></span></div></td>
+        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><?php echo ($vo["cate_name"]); ?></div></td>
+        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><img src="/thinkphp-season2<?php echo ($vo["cate_pic"]); ?>" height="50"></div></td>
         <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center">192.168.0.124</div></td>
         <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center">用户可以对系统的所有操作进行管理...</div></td>
         <td height="20" bgcolor="#FFFFFF"><div align="center" class="STYLE21"><a href="/thinkphp-season2/index.php/Admin/Category/edit">修改</a> | 删除</div></td>
-      </tr>
-
+      </tr><?php endforeach; endif; else: echo "" ;endif; ?>
     </table></td>
   </tr>
 
