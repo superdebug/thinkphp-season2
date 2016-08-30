@@ -92,6 +92,8 @@ for(i=0;i<cs.length;i++){
 </head>
 
 <body>
+<form action="" enctype="multipart/form-data" method="post">
+<input type="hidden" name="cate_id" value="{$cateresa.cate_id}">
 <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
     <td height="30"><table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -121,46 +123,59 @@ for(i=0;i<cs.length;i++){
       <!--</tr>-->
       <tr>
         <td height="20" bgcolor="#FFFFFF" class="STYLE6" align="right" >栏目名称</td>
-        <td height="20" bgcolor="#FFFFFF" class="STYLE19" align="left"><input type="text"/></td>
+        <td height="20" bgcolor="#FFFFFF" class="STYLE19" align="left"><input name="cate_name" type="text" value="{$cateresa.cate_name}"/></td>
       </tr>
       <tr>
         <td height="20" bgcolor="#FFFFFF" class="STYLE6" align="right">英文名称</td>
-        <td height="20" bgcolor="#FFFFFF" class="STYLE19" align="left"><input type="text"/></td>
+        <td height="20" bgcolor="#FFFFFF" class="STYLE19" align="left"><input  name="cate_ename" type="text" value="{$cateresa.cate_ename}"/></td>
       </tr>
       <tr>
         <td height="20" bgcolor="#FFFFFF" class="STYLE6" align="right">关键字</td>
-        <td height="20" bgcolor="#FFFFFF" class="STYLE19" align="left"><input type="text"/></td>
+        <td height="20" bgcolor="#FFFFFF" class="STYLE19" align="left"><input name="cate_keywords" type="text" value="{$cateresa.cate_keywords}"/></td>
       </tr>
       <tr>
         <td height="20" bgcolor="#FFFFFF" class="STYLE6" align="right">栏目描述</td>
-        <td height="20" bgcolor="#FFFFFF" class="STYLE19" align="left"><input type="text"/></td>
+        <td height="20" bgcolor="#FFFFFF" class="STYLE19" align="left"><textarea  name="cate_desc" cols="30" rows="5">{$cateresa.cate_name}</textarea>
       </tr>
       <tr>
         <td height="20" bgcolor="#FFFFFF" class="STYLE6" align="right">缩略图</td>
-        <td height="20" bgcolor="#FFFFFF" class="STYLE19" align="left"><input type="file"/></td>
+        <td height="20" bgcolor="#FFFFFF" class="STYLE19" align="left">
+          <input name="cate_pic" type="file">
+          <if condition="$cateresa[cate_pic] neq ''">
+            <img src="__ROOT__{$cateresa[cate_pic]}" height="50">
+            <else/>
+            暂无缩略图
+          </if>
+        </td>
       </tr>
       <tr>
         <td height="20" bgcolor="#FFFFFF" class="STYLE6" align="right">栏目类型</td>
         <td class="cd" height="20" bgcolor="#FFFFFF" class="STYLE19" align="left">
-          列表栏目<input type="radio" checked="checked" name="cate_type"/>封面栏目<input type="radio" name="cate_type" />产品栏目<input type="radio" name="cate_type"/>
+
+          列表栏目<input type="radio"  <if condition="$cateresa[cate_type] eq 1 ">checked="checked"</if> name="cate_type" value="1"/>
+          封面栏目<input type="radio"  <if condition="$cateresa[cate_type] eq 0 ">checked="checked"</if>name="cate_type" value="0"/>
+          产品栏目<input type="radio"  <if condition="$cateresa[cate_type] eq 2 ">checked="checked"</if> name="cate_type"value="2"/>
         </td>
       </tr>
       <tr>
         <td height="20" bgcolor="#FFFFFF" class="STYLE6" align="right">上级栏目</td>
         <td height="20" bgcolor="#FFFFFF" class="STYLE19" align="left">
-          <select>
-            <option value="">顶级栏目</option>
+          <select name="parentid">
+            <option value="0">顶级栏目</option>
+            <volist name="cateres" id="vo">
+              <option <if condition="$cateresa[cate_id] eq $vo[cate_id]">style="display:none"</if> <if condition="$cateresa[parentid] eq $vo[cate_id]">selected="selected"</if>  value="{$vo.cate_id}"><?php echo str_repeat('-',$vo[level]*3); ?>{$vo.cate_name}</option>
+            </volist>
           </select>
         </td>
       </tr>
       <tr>
         <td height="20" bgcolor="#FFFFFF" class="STYLE6" align="right">栏目内容</td>
         <td height="20" bgcolor="#FFFFFF" class="STYLE19" align="left">
-          <textarea id="content" ></textarea>
+          <textarea id="content" name="cate_content" >{$cateresa[cate_content]}</textarea>
         </td>
       </tr>
       <tr>
-        <td height="20" colspan="2" bgcolor="#FFFFFF" class="STYLE6" align="center"><input type="button" value="确定增加" /></td>
+        <td height="20" colspan="2" bgcolor="#FFFFFF" class="STYLE6" align="center"><input type="submit" value="确定增加" /></td>
         </td>
       </tr>
 
@@ -169,6 +184,7 @@ for(i=0;i<cs.length;i++){
   </tr>
 
 </table>
+</form>
 </body>
 <script>UE.getEditor('content',{initialFrameWidth:1000,initialFrameHeight:500,});</script>
 </html>

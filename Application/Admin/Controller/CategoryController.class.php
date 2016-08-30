@@ -4,8 +4,8 @@ use Think\Controller;
 class CategoryController extends Controller {
     public function lst(){
         $cate=D('category');
-        $cateres=$cate->select();
-        $this->assign('cateres',$cateres);
+        $catetree=$cate->catetree(); //调用分类数函数 位于分类模型内
+        $this->assign('cateres',$catetree);
         $this->display();
     }
 
@@ -17,7 +17,7 @@ class CategoryController extends Controller {
             $data['cate_keywords'] = I('cate_keywords');
             $data['cate_desc'] = I('cate_desc');
             $data['cate_type'] = I('cate_type');
-            $data['cate_parentid'] = I('cate_parentid');
+            $data['parentid'] = I('parentid');
             $data['cate_content'] = I('cate_content');
             //图片上传代码
             if ($_FILES['cate_pic']['tmp_name'] != '') {
@@ -38,7 +38,7 @@ class CategoryController extends Controller {
                 if($cate->add($data)){
                     $this->success('栏目新增成功',U('lst'));
                 }else{
-                    $this->error($cate->getError());
+                    $this->error('栏目修改失败');
                 }
 
             }else{
@@ -46,10 +46,57 @@ class CategoryController extends Controller {
             }
             return;
         }
+        $cateres=$cate->catetree();
+        $this->assign("cateres",$cateres);
         $this->display();
     }
 
-    public function edit(){
+    public function edit($cate_id){
+        $cate=D('category');
+        if (IS_POST) {
+            $data['cate_id'] = I('cate_id');
+            $data['cate_name'] = I('cate_name');
+            $data['cate_ename'] = I('cate_ename');
+            $data['cate_keywords'] = I('cate_keywords');
+            $data['cate_desc'] = I('cate_desc');
+            $data['cate_type'] = I('cate_type');
+            $data['parentid'] = I('parentid');
+            $data['cate_content'] = I('cate_content');
+            //图片上传代码
+            if ($_FILES['cate_pic']['tmp_name'] != '') {
+                $upload = new \Think\Upload();// 实例化上传类
+                $upload->maxSize = 3145728;// 设置附件上传大小
+                $upload->exts = array('jpg', 'gif', 'png', 'jpeg');// 设置附件上传类型
+                $upload->rootPath = './'; //设置上传文件路径
+                $upload->savePath = './Public/Uploads/'; // 设置附件上传目录 确保该路径及目录必须存在
+                $info = $upload->uploadOne($_FILES['cate_pic']); //数据表对应的字段
+                if (!$info) {// 上传错误提示错误信息
+                    $this->error($upload->getError());
+                } else {// 上传成功 获取上传文件信息
+                    $data['cate_pic'] = $info['savepath'] . $info['savename'];
+                }
+            }
+            //模型自动验证
+            if ($cate->create($data)) {
+
+                if($cate->save($data)){
+                    $this->success('栏目修改成功',U('lst'));
+                }else{
+                    $this->error('栏目修改失败');
+                }
+
+            }else{
+                $this->error($cate->getError());
+            }
+            return;
+        }
+
+        $cateresa=$cate->find($cate_id);
+        //分页树排序
+        $this->assign('cateresa',$cateresa);
+        $cateres=$cate->catetree();
+
+        $this->assign("cateres",$cateres);
         $this->display();
     }
 

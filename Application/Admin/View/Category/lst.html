@@ -125,7 +125,7 @@ for(i=0;i<cs.length;i++){
           <input type="checkbox" name="checkbox2" id="checkbox2" />
         </div></td>
         <td height="20" bgcolor="#FFFFFF" class="STYLE6"><div align="center"><span class="STYLE19">{$vo.cate_id}</span></div></td>
-        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center">{$vo.cate_name}</div></td>
+        <td height="20" bgcolor="#FFFFFF" class="STYLE19" align="left" style="padding-left:5px"><?php echo str_repeat('-',$vo[level]*3); ?>{$vo.cate_name}</div></td>
         <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center">
         <if condition="$vo[cate_pic] neq ''">
           <img src="__ROOT__{$vo.cate_pic}" height="50">
@@ -135,7 +135,7 @@ for(i=0;i<cs.length;i++){
         </div></td>
         <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center">{$vo.parentid}</div></td>
         <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center">{$vo.cate_type}</div></td>
-        <td height="20" bgcolor="#FFFFFF"><div align="center" class="STYLE21"><a href="__CONTROLLER__/edit/{$vo.cate_id}">修改</a> |<a href="__CONTROLLER__/del/{$vo.cate_id}"> 删除</a></div></td>
+        <td height="20" bgcolor="#FFFFFF"><div align="center" class="STYLE21"><a href="__CONTROLLER__/edit/cate_id/{$vo.cate_id}">修改</a> |<a href="__CONTROLLER__/del/cate_id/{$vo.cate_id}"> 删除</a></div></td>
       </tr>
       </volist>
     </table></td>

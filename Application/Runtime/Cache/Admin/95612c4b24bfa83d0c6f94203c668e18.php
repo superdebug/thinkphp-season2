@@ -151,7 +151,7 @@ for(i=0;i<cs.length;i++){
         <td height="20" bgcolor="#FFFFFF" class="STYLE6" align="right">上级栏目</td>
         <td height="20" bgcolor="#FFFFFF" class="STYLE19" align="left">
           <select name="parentid">
-            <option  value="0">顶级栏目</option>
+            <?php if(is_array($cateres)): $i = 0; $__LIST__ = $cateres;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><option value="<?php echo ($vo["cate_id"]); ?>"><?php echo str_repeat('-',$vo[level]*3); echo ($vo["cate_name"]); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
           </select>
         </td>
       </tr>

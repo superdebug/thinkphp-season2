@@ -124,7 +124,7 @@ for(i=0;i<cs.length;i++){
           <input type="checkbox" name="checkbox2" id="checkbox2" />
         </div></td>
         <td height="20" bgcolor="#FFFFFF" class="STYLE6"><div align="center"><span class="STYLE19"><?php echo ($vo["cate_id"]); ?></span></div></td>
-        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><?php echo ($vo["cate_name"]); ?></div></td>
+        <td height="20" bgcolor="#FFFFFF" class="STYLE19" align="left" style="padding-left:5px"><?php echo str_repeat('-',$vo[level]*3); echo ($vo["cate_name"]); ?></div></td>
         <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center">
         <?php if($vo[cate_pic] != ''): ?><img src="/thinkphp-season2<?php echo ($vo["cate_pic"]); ?>" height="50">
         <?php else: ?>
@@ -132,7 +132,7 @@ for(i=0;i<cs.length;i++){
         </div></td>
         <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><?php echo ($vo["parentid"]); ?></div></td>
         <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><?php echo ($vo["cate_type"]); ?></div></td>
-        <td height="20" bgcolor="#FFFFFF"><div align="center" class="STYLE21"><a href="/thinkphp-season2/index.php/Admin/Category/edit/<?php echo ($vo["cate_id"]); ?>">修改</a> |<a href="/thinkphp-season2/index.php/Admin/Category/del/<?php echo ($vo["cate_id"]); ?>"> 删除</a></div></td>
+        <td height="20" bgcolor="#FFFFFF"><div align="center" class="STYLE21"><a href="/thinkphp-season2/index.php/Admin/Category/edit/cate_id/<?php echo ($vo["cate_id"]); ?>">修改</a> |<a href="/thinkphp-season2/index.php/Admin/Category/del/cate_id/<?php echo ($vo["cate_id"]); ?>"> 删除</a></div></td>
       </tr><?php endforeach; endif; else: echo "" ;endif; ?>
     </table></td>
   </tr>
