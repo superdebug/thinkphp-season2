@@ -100,4 +100,27 @@ class CategoryController extends Controller {
         $this->display();
     }
 
+    public function del($cate_id){
+        $cate=D('category');
+        if ($cate->delete($cate_id)){
+                $this->success('删除成功',U('lst'));
+        }else{
+                $this->error('删除栏目失败');
+        }
+    }
+
+
+    public function  bdel(){
+        $bdel=I('bdel');
+        if($bdel){ //如果数组不为空
+            //将数组按照逗号分割为字符串
+            $delid=implode(',',$bdel);
+            $cate=D('category');
+            if($cate->delete($delid)){
+                $this->success('批量删除栏目成功',U('lst'));
+            }else{
+                $this->error('批量删除栏目失败！');
+            }
+        }
+    }
 }

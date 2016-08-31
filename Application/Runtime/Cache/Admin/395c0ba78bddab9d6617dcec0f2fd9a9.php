@@ -3,6 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>无标题文档</title>
+    <script language="javascript" src="<?php echo ADMIN_PUC;?>js/jquery-1.4.2.min.js"></script>
 <style type="text/css">
 <!--
 body {
@@ -86,6 +87,7 @@ for(i=0;i<cs.length;i++){
 </head>
 
 <body>
+<form method="post" action="/thinkphp-season2/index.php/Admin/Category/bdel">
 <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
     <td height="30"><table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -110,7 +112,7 @@ for(i=0;i<cs.length;i++){
     <td><table width="100%" border="0" cellpadding="0" cellspacing="1" bgcolor="#a8c7ce" onmouseover="changeto()"  onmouseout="changeback()">
       <tr>
         <td width="4%" height="20" bgcolor="d3eaef" class="STYLE10"><div align="center">
-          <input type="checkbox" name="checkbox" id="checkbox" />
+          <input type="checkbox" name="checkbox" id="selall"  />
         </div></td>
         <td width="10%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">栏目ID</span></div></td>
         <td width="15%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">栏目名称</span></div></td>
@@ -121,7 +123,7 @@ for(i=0;i<cs.length;i++){
       </tr>
       <?php if(is_array($cateres)): $i = 0; $__LIST__ = $cateres;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
         <td height="20" bgcolor="#FFFFFF"><div align="center">
-          <input type="checkbox" name="checkbox2" id="checkbox2" />
+          <input type="checkbox" class="selall" name="bdel[]" value="<?php echo ($vo["cate_id"]); ?>" />
         </div></td>
         <td height="20" bgcolor="#FFFFFF" class="STYLE6"><div align="center"><span class="STYLE19"><?php echo ($vo["cate_id"]); ?></span></div></td>
         <td height="20" bgcolor="#FFFFFF" class="STYLE19" align="left" style="padding-left:5px"><?php echo str_repeat('-',$vo[level]*3); echo ($vo["cate_name"]); ?></div></td>
@@ -132,11 +134,26 @@ for(i=0;i<cs.length;i++){
         </div></td>
         <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><?php echo ($vo["parentid"]); ?></div></td>
         <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><?php echo ($vo["cate_type"]); ?></div></td>
-        <td height="20" bgcolor="#FFFFFF"><div align="center" class="STYLE21"><a href="/thinkphp-season2/index.php/Admin/Category/edit/cate_id/<?php echo ($vo["cate_id"]); ?>">修改</a> |<a href="/thinkphp-season2/index.php/Admin/Category/del/cate_id/<?php echo ($vo["cate_id"]); ?>"> 删除</a></div></td>
+        <td height="20" bgcolor="#FFFFFF"><div align="center" class="STYLE21"><a href="/thinkphp-season2/index.php/Admin/Category/edit/cate_id/<?php echo ($vo["cate_id"]); ?>">修改</a> |<a href="/thinkphp-season2/index.php/Admin/Category/del/cate_id/<?php echo ($vo["cate_id"]); ?>" onclick="return confirm('您确定要删除该栏目吗？');"> 删除</a></div></td>
       </tr><?php endforeach; endif; else: echo "" ;endif; ?>
     </table></td>
   </tr>
-
+<tr><td align="left"><input type="submit" value="删除选中项"></td></tr>
 </table>
+</form>
 </body>
 </html>
+<script>
+    //判断如果id是selall的标签是否被点击
+    $("#selall").click(function(){
+        //如果是选择状态
+        if($(this).attr("checked")){
+            //将所有class为selall的标签添加属性
+            $(".selall").attr("checked","checked");
+        //如果不是选择状态
+        }else{
+            //删除checked属性
+            $(".selall").removeAttr("checked");
+        }
+    })
+</script>

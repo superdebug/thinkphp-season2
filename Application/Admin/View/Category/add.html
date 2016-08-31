@@ -151,6 +151,7 @@ for(i=0;i<cs.length;i++){
         <td height="20" bgcolor="#FFFFFF" class="STYLE6" align="right">上级栏目</td>
         <td height="20" bgcolor="#FFFFFF" class="STYLE19" align="left">
           <select name="parentid">
+            <option value="0">顶级栏目</option>
             <volist name="cateres" id="vo">
                 <option value="{$vo.cate_id}"><?php echo str_repeat('-',$vo[level]*3); ?>{$vo.cate_name}</option>
             </volist>
