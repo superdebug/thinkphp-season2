@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a16745c0-3d54-465b-bb58-1038f1af5d36" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Admin/Controller/CategoryController.class.php" afterPath="$PROJECT_DIR$/Application/Admin/Controller/CategoryController.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Admin/View/Category/add.html" afterPath="$PROJECT_DIR$/Application/Admin/View/Category/add.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Admin/View/Category/lst.html" afterPath="$PROJECT_DIR$/Application/Admin/View/Category/lst.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Runtime/Cache/Admin/395c0ba78bddab9d6617dcec0f2fd9a9.php" afterPath="$PROJECT_DIR$/Application/Runtime/Cache/Admin/395c0ba78bddab9d6617dcec0f2fd9a9.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Runtime/Cache/Admin/95612c4b24bfa83d0c6f94203c668e18.php" afterPath="$PROJECT_DIR$/Application/Runtime/Cache/Admin/95612c4b24bfa83d0c6f94203c668e18.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Runtime/Logs/Admin/16_08_30.log" afterPath="$PROJECT_DIR$/Application/Runtime/Logs/Admin/16_08_30.log" />
-    </list>
+    <list default="true" id="a16745c0-3d54-465b-bb58-1038f1af5d36" name="Default" comment="" />
     <ignored path="thinkphp-season2.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -210,15 +202,15 @@
       <workItem from="1472018916110" duration="12505000" />
       <workItem from="1472177327628" duration="13073000" />
       <workItem from="1472536064387" duration="10303000" />
-      <workItem from="1472613192071" duration="11318000" />
+      <workItem from="1472613192071" duration="11913000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72187000" />
+    <option name="totallyTimeSpent" value="72782000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25718608" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
