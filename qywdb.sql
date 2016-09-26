@@ -86,7 +86,7 @@ CREATE TABLE `ar_category` (
   `parentid` smallint(5) DEFAULT '0' COMMENT '父分类,无限极分类核心,默认为0，即没有父类',
   `cate_content` text NOT NULL,
   PRIMARY KEY (`cate_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -95,7 +95,7 @@ CREATE TABLE `ar_category` (
 
 LOCK TABLES `ar_category` WRITE;
 /*!40000 ALTER TABLE `ar_category` DISABLE KEYS */;
-INSERT INTO `ar_category` VALUES (1,'栏目名a','啊啊','','阿斯蒂芬','阿斯蒂芬',0,0,'&lt;p&gt;撒点发送方&lt;/p&gt;'),(2,'栏目2','lm2','','关键字测试','描述测试',0,0,'&lt;p&gt;淡淡的&lt;/p&gt;'),(3,'简介','jianjie','./Public/Uploads/2016-08-24/57bd4428bf7a3.jpg','简介关键字','描述简介',0,0,'&lt;p&gt;sadfasdf&lt;/p&gt;&lt;p&gt;&lt;img src=&quot;/thinkphp-season2/Public/images/20160824/1472021531854094.jpg&quot; title=&quot;1472021531854094.jpg&quot;/&gt;&lt;/p&gt;&lt;p&gt;&lt;img src=&quot;/thinkphp-season2/Public/images/20160824/1472021531564835.jpg&quot; title=&quot;1472021531564835.jpg&quot;/&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;'),(4,'企业','qiye','./Public/Uploads/2016-08-24/57bd53b95e59b.jpg','企业','企业描述',2,0,'&lt;p&gt;xcvx&lt;/p&gt;&lt;p&gt;zc自行车sdf&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;sdfsdf&lt;/p&gt;&lt;p&gt;&lt;img src=&quot;http://img.baidu.com/hi/jx2/j_0024.gif&quot;/&gt;&lt;/p&gt;'),(5,'企业2','','','','',1,0,'');
+INSERT INTO `ar_category` VALUES (26,'河南','','','','',1,0,''),(27,'郑州市','','','','',1,26,''),(28,'二七区','','','','',1,27,''),(29,'人民路','','','','',1,28,''),(30,'商丘市','','','','',1,26,''),(31,'山东省','','','','',1,0,''),(32,'淄博市','','','','',1,31,'');
 /*!40000 ALTER TABLE `ar_category` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -133,4 +133,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-08-24 16:54:06
+-- Dump completed on 2016-09-26  9:11:11

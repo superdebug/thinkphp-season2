@@ -127,7 +127,7 @@ for(i=0;i<cs.length;i++){
           <input type="checkbox" class="selall" name="bdel[]" value="{$vo.cate_id}" />
         </div></td>
         <td height="20" bgcolor="#FFFFFF" class="STYLE6"><div align="center"><span class="STYLE19">{$vo.cate_id}</span></div></td>
-        <td height="20" bgcolor="#FFFFFF" class="STYLE19" align="left" style="padding-left:5px"><?php echo str_repeat('-',$vo[level]*3); ?>{$vo.cate_name}</div></td>
+        <td height="20" bgcolor="#FFFFFF" class="STYLE19" align="left" style="padding-left:5px"><?php echo '|'.str_repeat('_',$vo[level]*3); ?>{$vo.cate_name}</div></td>
         <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center">
         <if condition="$vo[cate_pic] neq ''">
           <img src="__ROOT__{$vo.cate_pic}" height="50">

@@ -126,7 +126,7 @@ for(i=0;i<cs.length;i++){
           <input type="checkbox" class="selall" name="bdel[]" value="<?php echo ($vo["cate_id"]); ?>" />
         </div></td>
         <td height="20" bgcolor="#FFFFFF" class="STYLE6"><div align="center"><span class="STYLE19"><?php echo ($vo["cate_id"]); ?></span></div></td>
-        <td height="20" bgcolor="#FFFFFF" class="STYLE19" align="left" style="padding-left:5px"><?php echo str_repeat('-',$vo[level]*3); echo ($vo["cate_name"]); ?></div></td>
+        <td height="20" bgcolor="#FFFFFF" class="STYLE19" align="left" style="padding-left:5px"><?php echo '|'.str_repeat('_',$vo[level]*3); echo ($vo["cate_name"]); ?></div></td>
         <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center">
         <?php if($vo[cate_pic] != ''): ?><img src="/thinkphp-season2<?php echo ($vo["cate_pic"]); ?>" height="50">
         <?php else: ?>

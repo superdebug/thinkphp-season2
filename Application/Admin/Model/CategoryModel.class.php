@@ -26,5 +26,39 @@ class CategoryModel extends Model {
         return $ret;
     }
 
+    public function getchilrenid($data,$parentid)
+    {
+        static $ret = array();
+        foreach ($data as $k => $v) {
+            if($v['parentid']==$parentid){ //如果父节点id等于传递过来的参数id，则将该id存入到静态数组内
+            $ret[] = $v['cate_id'];
+            $this->getchilrenid($data, $v['cate_id']);
+            }
+        }
+        return $ret;
+    }
+
+    public function childenid($cateid){
+        $data=$this->select(); //获取所有的栏目
+        return $this->getchilrenid($data,$cateid);
+    }
+
+    public function _before_delete($option){
+        if(is_array($option['where']['cate_id'])){
+            //如果实批量删除，即删除的是数组型数据
+            echo '批量删除';
+            die;
+        }else{
+            //如果删除的是单条数据，即数值型数据
+            $chilrenids=$this->childenid($option['where']['cate_id']);
+            $chilrenids=implode(',',$chilrenids);
+
+            if($chilrenids){
+                $this->execute("DELETE FROM ar_category where cate_id in ($chilrenids)");
+            }
+        }
+
+
+    }
 
 }
